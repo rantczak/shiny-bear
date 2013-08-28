@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realtime:RealTimeSearch xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:realtime="http://xcp.emc.com/search/realtime" urn="urn:demo:com.emc.xcp.artifact.search.realtime:Artifacts/Real-time Queries/vendor_search.realtime" categoryId="com.emc.xcp.artifact.search.realtime" name="vendor_search" label="Vendor Search">
+  <datasource categoryId="com.emc.xcp.artifact.dataservice.datasourcecontract" name="vendor_search" label="Vendor Search" implCategoryId="com.emc.xcp.artifact.search.realtime">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="input_company" label="Company">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="input_client_document_num" label="Client Document Number">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <outputs xsi:type="nsDataserviceContract:AttributeElement" name="Result Count">
+      <attributeType xsi:type="nsAttributeDatatypes:IntegerType"/>
+    </outputs>
+    <outputs xsi:type="nsDataserviceContract:ArrayElement" name="Results">
+      <item xsi:type="nsDataserviceContract:StructureElement" name="Items">
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="company" label="Company">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="client_document_number" label="Client Document Number">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="revision" label="Revision">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="id" label="Object ID">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_lock_owner" label="Locked by" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+        <elements xsi:type="nsDataserviceContract:AttributeElement" name="r_object_type" label="Object type" sortable="true" hidden="true">
+          <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+        </elements>
+      </item>
+    </outputs>
+    <primaryElement>
+      <dataModel href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+    </primaryElement>
+  </datasource>
+  <inputParameters label="Company" name="company">
+    <formInputs xsi:type="realtime:RealTimeStringFormInput" operator="com.emc.xcp.model.common.StringOperator:EQUAL">
+      <contextSelection>
+        <parentRef>
+          <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+        </parentRef>
+        <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#//@attributes[name='company']"/>
+      </contextSelection>
+    </formInputs>
+  </inputParameters>
+  <inputParameters label="Client Document Number" name="client_document_num">
+    <formInputs xsi:type="realtime:RealTimeStringFormInput" operator="com.emc.xcp.model.common.StringOperator:EQUAL">
+      <contextSelection>
+        <parentRef>
+          <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+        </parentRef>
+        <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#//@attributes[name='client_document_number']"/>
+      </contextSelection>
+    </formInputs>
+  </inputParameters>
+  <columns label="Company">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+      </parentRef>
+      <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#//@attributes[name='company']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Client Document Number">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+      </parentRef>
+      <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#//@attributes[name='client_document_number']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Revision">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+      </parentRef>
+      <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#//@attributes[name='revision']"/>
+    </contextSelection>
+  </columns>
+  <columns label="Object ID">
+    <contextSelection>
+      <parentRef>
+        <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+      </parentRef>
+      <dataRef href="urn:xcp:com.emc.xcp.artifact.basetype:Artifacts/Base Type/basetype.basetype#//@attributes[name='r_object_id']"/>
+    </contextSelection>
+  </columns>
+  <defaultSort ascending="true"/>
+  <dataType xsi:type="nsDatatypes:Document" href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+  <resultOrientation>
+    <dataRef href="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content#/"/>
+  </resultOrientation>
+</realtime:RealTimeSearch>

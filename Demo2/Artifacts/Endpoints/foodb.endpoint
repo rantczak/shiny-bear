@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsEndpoint:DatabaseEndpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:nsEndpoint="http://xcp.emc.com/endpoint" urn="urn:demo:com.emc.xcp.artifact.endpoint:Artifacts/Endpoints/foodb.endpoint" categoryId="com.emc.xcp.artifact.endpoint" name="foodb" label="FooDB" driver="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:XE" username="dmadmin" password="DM_ENCR_TEXT_V2=AAAAEA+qt6k4sPw3Z6j9Wu1WwJVeontge7DkrYCWz1SAPQY74wVhfLBORiQyjDgjz7CMR8XbTplaTO+zAnBqUSkV5/g="/>

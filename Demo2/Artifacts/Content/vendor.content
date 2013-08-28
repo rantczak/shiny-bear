@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsDatatypes:Document xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:contentanalytics="http://xcp.emc.com/contentanalytics" xmlns:nsAttributeDatatypes="http://xcp.emc.com/attribute_datatypes" xmlns:nsDataserviceContract="http://xcp.emc.com/DataserviceContract" xmlns:nsDatatypes="http://xcp.emc.com/datatypes" xmlns:nsPicklist="http://xcp.emc.com/picklist" urn="urn:demo:com.emc.xcp.artifact.doc:Artifacts/Content/vendor.content" categoryId="com.emc.xcp.artifact.doc" name="vendor" label="Vendor" commentable="true">
+  <attributes name="company" label="Company">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="20"/>
+  </attributes>
+  <attributes name="client_document_number" label="Client Document Number">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="255"/>
+  </attributes>
+  <attributes name="revision" label="Revision">
+    <type xsi:type="nsAttributeDatatypes:StringType" length="3"/>
+  </attributes>
+  <attributes name="companies" label="Companies">
+    <type xsi:type="nsPicklist:PickListType">
+      <pickList href="urn:demo:com.emc.xcp.artifact.picklist:Artifacts/Picklists/companies.picklist#/"/>
+    </type>
+  </attributes>
+  <attributes name="email" label="Email Address" repeating="true">
+    <type xsi:type="contentanalytics:DiscoveredMetadataType">
+      <discoveredMetadata xsi:type="contentanalytics:PatternMetadata" href="urn:xcp:com.emc.xcp.artifact.contentanalytics:Artifacts/Discovered Metadata/pattern_metadata_email.discoveredmetadata#/"/>
+    </type>
+  </attributes>
+  <accessControlPolicy inheritedFromParentFolder="true"/>
+  <defaultFolderPath/>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_update_vendor" label="Update Vendor" implCategoryId="com.emc.xcp.artifact.doc">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="client_document_number" label="Client Document Number">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="companies" label="Companies">
+      <attributeType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:demo:com.emc.xcp.artifact.picklist:Artifacts/Picklists/companies.picklist#/"/>
+      </attributeType>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="company" label="Company">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="email" label="Email Address" repeating="true">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="revision" label="Revision">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Update"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_delete_vendor" label="Delete Vendor" implCategoryId="com.emc.xcp.artifact.doc">
+    <primaryElement dataModel="/"/>
+    <actionType type="Delete"/>
+  </dataActionContracts>
+  <dataActionContracts categoryId="com.emc.xcp.artifact.dataservice.dataactioncontract" name="da_def_import_vendor" label="Import Vendor" implCategoryId="com.emc.xcp.artifact.doc">
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="company" label="Company">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="client_document_number" label="Client Document Number">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="revision" label="Revision">
+      <attributeType xsi:type="nsAttributeDatatypes:StringType"/>
+    </inputs>
+    <inputs xsi:type="nsDataserviceContract:AttributeElement" name="companies" label="Companies">
+      <attributeType xsi:type="nsPicklist:PickListType">
+        <pickList href="urn:demo:com.emc.xcp.artifact.picklist:Artifacts/Picklists/companies.picklist#/"/>
+      </attributeType>
+    </inputs>
+    <primaryElement dataModel="/"/>
+    <actionType type="Import"/>
+  </dataActionContracts>
+  <superType xsi:type="nsDatatypes:Document" href="urn:xcp:com.emc.xcp.artifact.doc:Artifacts/Content/dm_document.content#/"/>
+</nsDatatypes:Document>

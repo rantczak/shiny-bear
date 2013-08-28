@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsJavaModule:JavaModule xmlns:nsJavaModule="http://xcp.emc.com/javamodule" urn="urn:cia:com.emc.xcp.artifact.javamodule.category:Artifacts/Java Modules/UniqueIDGenerator.javamodule" categoryId="com.emc.xcp.artifact.javamodule.category" name="UniqueIDGenerator" label="Unique ID Generator" implementationClass="mypackage.utils.UniqueIDGenerator">
+  <implementationJars contentPath="content/modules/XcpJavaExtensionSamples.jar"/>
+</nsJavaModule:JavaModule>
